@@ -1,0 +1,258 @@
+{
+    "MBT": {
+        "name": "Mercado Bitcoin",
+        "color": "fb8072",
+        "url": "https://www.mercadobitcoin.com.br",
+        "url_book": "https://www.mercadobitcoin.com.br/BRLBTC/negociacoes/",
+        "fees": {
+            "in_BRL": [
+                0.0199,
+                2.9
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0.0199,
+                2.9
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.003,
+                0
+            ],
+            "trade_market": [
+                0.007,
+                0
+            ]
+        }
+    },
+    "B2U": {
+        "name": "BitcoinToYou",
+        "color": "80b1d3",
+        "url": "https://www.bitcointoyou.com",
+        "url_book": "https://broker.bitcointoyou.com/Negociacoes/externo",
+        "fees": {
+            "in_BRL": [
+                0.0189,
+                0
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0.0189,
+                0
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.0025,
+                0
+            ],
+            "trade_market": [
+                0.006,
+                0
+            ]
+        }
+    },
+    "BAS": {
+        "name": "Basebit",
+        "color": "ccebc5",
+        "url": "https://www.basebit.com.br",
+        "url_book": "https://www.basebit.com.br",
+        "fees": {
+            "in_BRL": [
+                0.0149,
+                0
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0.0149,
+                0
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.0025,
+                0
+            ],
+            "trade_market": [
+                0.006,
+                0
+            ]
+        }
+    },
+    "FOX": {
+        "name": "FoxBit",
+        "color": "fdb462",
+        "url": "http://foxbit.com.br/",
+        "url_book": "https://foxbit.exchange/#market",
+        "fees": {
+            "in_BRL": [
+                0.00,
+                0
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0.0139,
+                0
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.0025,
+                0
+            ],
+            "trade_market": [
+                0.005,
+                0
+            ]
+        }
+    },
+    "BIV": {
+        "name": "Bitinvest",
+        "color": "bebada",
+        "url": "https://www.bitinvest.com.br",
+        "url_book": "https://www.bitinvest.com.br/exchange/orders/negotiations",
+        "fees": {
+            "in_BRL": [
+                0,
+                0
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0.0099,
+                0
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.003,
+                0
+            ],
+            "trade_market": [
+                0.003,
+                0
+            ]
+        }
+    },
+    "FLW": {
+        "name": "flowBTC",
+        "color": "d9d9d9",
+        "url": "https://trader.flowbtc.com",
+        "url_book": "https://trader.flowbtc.com",
+        "fees": {
+            "in_BRL": [
+                0.005,
+                0
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0.005,
+                0
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.0035,
+                0
+            ],
+            "trade_market": [
+                0.0035,
+                0
+            ]
+        }
+    },
+    "NEG": {
+        "name": "Negocie Coins",
+        "color": "b3de69",
+        "url": "https://www.negociecoins.com.br",
+        "url_book": "http://www.negociecoins.com.br/negociacoes",
+        "fees": {
+            "in_BRL": [
+                0,
+                0
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0.005,
+                8.5
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.003,
+                0
+            ],
+            "trade_market": [
+                0.004,
+                0
+            ]
+        }
+    },
+    "LOC": {
+        "name": "LocalBitcoins",
+        "color": "bc80bd",
+        "url": "https://localbitcoins.com/",
+        "url_book": "https://localbitcoins.com/",
+        "fees": {
+            "in_BRL": [
+                0,
+                0
+            ],
+            "in_BTC": [
+                0,
+                0
+            ],
+            "out_BRL": [
+                0,
+                0
+            ],
+            "out_BTC": [
+                0,
+                0
+            ],
+            "trade_book": [
+                0.01,
+                0
+            ],
+            "trade_market": [
+                0,
+                0
+            ]
+        }
+    }
+}
