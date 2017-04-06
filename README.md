@@ -1,9 +1,37 @@
 ## BTCBRL Chrome Extension
 
-![btcbrl](http://i.imgur.com/jpcLzO8.png)
+![btcbrl](screenshot.png)
 
-This extension shows the current value of the BTCBRL (buy) / BTCUSD (sell) from different exchanges (Default FoxBit). It updates the values from minute to minute to give you the most accurate rates from different exchanges so you can take quick decisions.
+This extension shows the current value of BTCBRL (buy) / BTCUSD (sell) from different exchanges (Default FoxBit).
 
+## Install
+
+```
+$ npm install
+$ bower install
+```
+
+*Requires [Node.js](https://nodejs.org) 6.5.0+*
+
+## Usage
+
+Build:
+
+```
+$ gulp build
+```
+
+Package:
+
+```
+$ gulp package
+```
+
+Livereload:
+
+```
+$ gulp watch
+```
 
 ## License
 
