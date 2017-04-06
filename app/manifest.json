@@ -1,0 +1,27 @@
+{
+  "name": "BTCBRL",
+  "version": "2.0",
+  "manifest_version": 2,
+  "description": "This extension shows the current value of the BTCBRL (buy) / BTCUSD (sell) from different exchanges (Default FoxBit).",
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "BTCBRL (buy) / BTCUSD (sell)"
+  },
+  "background": {
+    "scripts": [
+      "scripts/chromereload.js",
+      "scripts/background.js",
+      "bower_components/jquery/dist/jquery.min.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "alarms",
+    "storage",
+    "https://api.uphold.com/",
+    "http://api.bitvalor.com/",
+    "https://www.bitwage.com/"
+  ]
+}
