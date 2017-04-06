@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "btcbrl",
-    "description": "The name of the application"
+    "message": "BTCBRL",
+    "description": "BTCBRL"
   },
   "appDescription": {
-    "message": "My Chrome Extension",
-    "description": "The description of the application"
+    "message": "BTCBRL",
+    "description": "This extension shows the current value of the BTCBRL (buy) / BTCUSD (sell) from different exchanges (Default FoxBit)."
   }
 }

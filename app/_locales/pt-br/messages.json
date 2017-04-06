@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "BTCBRL",
+    "description": "BTCBRL"
+  },
+  "appDescription": {
+    "message": "BTCBRL",
+    "description": "Essa extensão mostra os valores atuais de BTCBRL (buy) / BTCUSD (sell) para diferentes corretoras (FoxBit por padrão)."
+  }
+}
