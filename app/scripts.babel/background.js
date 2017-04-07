@@ -1,3 +1,5 @@
+'use strict';
+
 function request(url) {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -69,7 +71,7 @@ function setRateBadge() {
   });
 }
 
-function setRateFromBtc() {
+function setRateFromBitwage() {
   getBtcBrlFromBitwage().then(function(html) {
     var usdbrl = $(html).find('[id*=\'keyUSDBRL\']').parent().next('div').text().trim().substr(-4);
     usdbrl = usdbrl.replace('.', ',');
@@ -87,6 +89,8 @@ function setRateFromBtc() {
     }
 
     localStorage.setItem('rates', JSON.stringify(rates));
+  }).catch(function(err) {
+    chrome.extension.getBackgroundPage().console.error(err);
   });
 }
 
@@ -99,7 +103,7 @@ chrome.browserAction.setBadgeText({
 
 function init() {
   setRateBadge();
-  setRateFromBtc();
+  setRateFromBitwage();
 }
 
 init();

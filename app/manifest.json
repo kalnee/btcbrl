@@ -1,6 +1,6 @@
 {
   "name": "BTCBRL",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "manifest_version": 2,
   "description": "This extension shows the current value of the BTCBRL (buy) / BTCUSD (sell) from different exchanges (Default FoxBit).",
   "default_locale": "en",
@@ -11,9 +11,9 @@
   },
   "background": {
     "scripts": [
+      "bower_components/jquery/dist/jquery.min.js",
       "scripts/chromereload.js",
-      "scripts/background.js",
-      "bower_components/jquery/dist/jquery.min.js"
+      "scripts/background.js"
     ],
     "persistent": false
   },

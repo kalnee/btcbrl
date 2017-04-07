@@ -3,8 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "cheerio": "^0.22.0"
+    "bootstrap": "^3.3.7"
   },
   "devDependencies": {
     "chai": "^3.5.0",

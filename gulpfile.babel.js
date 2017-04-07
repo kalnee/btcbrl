@@ -11,6 +11,10 @@ gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
     'app/_locales/**',
+    'app/styles/**',
+    'app/scripts/**',
+    'app/bower_components/jquery/dist/jquery.min.js',
+    'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
     '!app/scripts.babel',
     '!app/*.json',
     '!app/*.html',
@@ -73,9 +77,9 @@ gulp.task('chromeManifest', () => {
       }
   }))
   .pipe($.if('*.css', $.cleanCss({compatibility: '*'})))
-  .pipe($.if('*.js', $.sourcemaps.init()))
+  //.pipe($.if('*.js', $.sourcemaps.init()))
   .pipe($.if('*.js', $.uglify()))
-  .pipe($.if('*.js', $.sourcemaps.write('.')))
+  //.pipe($.if('*.js', $.sourcemaps.write('.')))
   .pipe(gulp.dest('dist'));
 });
 
