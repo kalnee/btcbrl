@@ -1,10 +1,10 @@
 'use strict';
 
 function request(url) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url);
-    xhr.onload = function() {
+    xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
         resolve(xhr.response);
       } else {
@@ -14,7 +14,7 @@ function request(url) {
         });
       }
     };
-    xhr.onerror = function() {
+    xhr.onerror = function () {
       reject({
         status: this.status,
         statusText: xhr.statusText
@@ -36,34 +36,28 @@ function getBtcBrlFromBitwage() {
   return request('https://www.bitwage.com/rates#historicaltickers');
 }
 
-function setRateBadge() {
-  var btcusd = undefined,
-    bitwage = undefined,
-    rates = {};
+function setRates() {
+  let btcusd;
+  let rates = {};
 
-  getBtcUsd().then(function(res) {
+  getBtcUsd().then(function (res) {
     btcusd = JSON.parse(res).ask;
     return getBtcBrlFromFox(res);
-  }).then(function(res) {
+  }).then(function (res) {
     let exchanges = JSON.parse(res).ticker_24h.exchanges;
 
-    let foxRate = exchanges.FOX.last;
-    let locRate = exchanges.LOC.last;
-    let b2uRate = exchanges.B2U.last;
-
-    let rate = (foxRate / btcusd).toFixed(2).toString().replace('.', ',');
-    chrome.browserAction.setBadgeText({
-      text: rate
-    });
+    let foxRate = exchanges.FOX ? exchanges.FOX.last : 0.0;
+    let locRate = exchanges.LOC ? exchanges.LOC.last : 0.0;
+    let b2uRate = exchanges.B2U ? exchanges.B2U.last : 0.0;
 
     rates = {
-      fox: rate,
+      fox: (foxRate / btcusd).toFixed(2).toString().replace('.', ','),
       loc: (locRate / btcusd).toFixed(2).toString().replace('.', ','),
       b2u: (b2uRate / btcusd).toFixed(2).toString().replace('.', ',')
-    }
+    };
 
     localStorage.setItem('rates', JSON.stringify(rates));
-  }).catch(function(err) {
+  }).catch(function (err) {
     chrome.extension.getBackgroundPage().console.error(err);
     chrome.browserAction.setBadgeText({
       text: '...'
@@ -71,13 +65,26 @@ function setRateBadge() {
   });
 }
 
+function setBadge() {
+  let rates = localStorage.getItem('rates');
+
+  if (rates) {
+    rates = JSON.parse(rates);
+    if (rates.bitwage) {
+      chrome.browserAction.setBadgeText({
+        text: rates.bitwage
+      });
+    }
+  }
+}
+
 function setRateFromBitwage() {
-  getBtcBrlFromBitwage().then(function(html) {
-    var usdbrl = $(html).find('[id*=\'keyUSDBRL\']').parent().next('div').text().trim().substr(-4);
+  getBtcBrlFromBitwage().then(function (html) {
+    let usdbrl = $(html).find('[id*=\'keyUSDBRL\']').parent().next('div').text().trim().substr(-4);
     usdbrl = usdbrl.replace('.', ',');
     console.log(`USDBRL extracted from Bitwage ${usdbrl}`);
 
-    var rates = localStorage.getItem('rates');
+    let rates = localStorage.getItem('rates');
 
     if (!rates) {
       rates = {
@@ -89,7 +96,8 @@ function setRateFromBitwage() {
     }
 
     localStorage.setItem('rates', JSON.stringify(rates));
-  }).catch(function(err) {
+    setBadge();
+  }).catch(function (err) {
     chrome.extension.getBackgroundPage().console.error(err);
   });
 }
@@ -102,8 +110,8 @@ chrome.browserAction.setBadgeText({
 });
 
 function init() {
-  setRateBadge();
   setRateFromBitwage();
+  setRates();
 }
 
 init();
@@ -113,6 +121,6 @@ chrome.alarms.create('btcbrl-alarm', {
   periodInMinutes: 1
 });
 
-chrome.alarms.onAlarm.addListener(function(alarm) {
+chrome.alarms.onAlarm.addListener(function (alarm) {
   init();
 });

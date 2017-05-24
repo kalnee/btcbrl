@@ -8,3 +8,5 @@ test/bower_components
 package
 app/scripts
 .DS_Store
+*.iml
+/.idea

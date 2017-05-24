@@ -33,6 +33,10 @@ Livereload:
 $ gulp watch
 ```
 
+## Issues
+
+The current `gulp package` command doesn't append all the background scripts such as jQuery.
+
 ## License
 
 MIT (c) Kalnee. See [LICENSE](https://github.com/kalnee/btcbrl/blob/master/LICENSE.md) for details.
