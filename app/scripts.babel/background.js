@@ -57,6 +57,7 @@ function setRates() {
     };
 
     localStorage.setItem('rates', JSON.stringify(rates));
+    setBadge();
   }).catch(function (err) {
     chrome.extension.getBackgroundPage().console.error(err);
     chrome.browserAction.setBadgeText({
@@ -70,9 +71,9 @@ function setBadge() {
 
   if (rates) {
     rates = JSON.parse(rates);
-    if (rates.bitwage) {
+    if (rates.fox) {
       chrome.browserAction.setBadgeText({
-        text: rates.bitwage
+        text: rates.fox
       });
     }
   }
@@ -96,7 +97,6 @@ function setRateFromBitwage() {
     }
 
     localStorage.setItem('rates', JSON.stringify(rates));
-    setBadge();
   }).catch(function (err) {
     chrome.extension.getBackgroundPage().console.error(err);
   });
